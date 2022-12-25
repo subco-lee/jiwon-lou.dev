@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack')
 
 module.exports = {
   entry: './index.tsx',
@@ -31,11 +32,27 @@ module.exports = {
           },
           use: 'ts-loader',
       },
+      {
+        test: /.css?$/,
+        exclude: [],
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(jpg|svg|png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      }
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
-    })
+    }),
+    new webpack.DefinePlugin({
+      process: {env: {}}
+  })
   ]
 };

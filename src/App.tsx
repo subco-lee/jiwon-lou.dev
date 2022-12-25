@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React, { FC, useRef } from 'react'
-
 import { Career, BlinkingArrow, Footer } from './components'
+import "./index.css";
 
 const App: FC = () => {
   const careerRef = useRef<null | HTMLDivElement>(null)
@@ -21,10 +21,10 @@ const App: FC = () => {
 
   return (
     <div>
-      {/* <div className="bg-slate-50 h-screen flex flex-col justify-between">
+      <div className="bg-slate-50 h-screen flex flex-col justify-between">
         <div className='flex flex-col tablet:flex-row h-full w-full justify-center place-items-center p-10 gap-10'>
           <img className="rounded-full aspect-auto w-40 h-40"
-            src={`${process.env.PUBLIC_URL}/profile.JPG`}
+            src={'profile.jpg'}
             alt="profile-avatar"
           />
           <div className='flex flex-col text-left justify-center'>
@@ -54,7 +54,7 @@ const App: FC = () => {
 
       <div ref={footerRef}>
       <Footer />
-      </div> */}
+      </div>
     </div>
   )
 }
