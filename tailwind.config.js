@@ -15,6 +15,17 @@ module.exports = {
       // => @media (min-width: 1280px) { ... }
     },
     extend: {
+      animation: {
+        pingSmall: 'pingSmall 0.9s cubic-bezier(0, 0, 0.2, 1) infinite',
+      },
+      keyframes: {
+        pingSmall: {
+          '75%, 100%': {
+            transform: 'scale(1.2)',
+            opacity: '0',
+          },
+        },
+      },
       colors: {
         background: '#f7f7f0',
         primary: '#92aeb3',
