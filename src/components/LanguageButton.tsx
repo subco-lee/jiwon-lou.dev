@@ -8,7 +8,7 @@ export const LanguageButton = () => {
   const changeLanguageToKo = () => i18n.changeLanguage('ko')
   const changeLanguageToEn = () => i18n.changeLanguage('en')
   return (
-    <div className="m-3">
+    <div className="mt-2 mr-3">
         <div className="relative" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
         {
             i18n.language === 'en' ? 
@@ -18,7 +18,7 @@ export const LanguageButton = () => {
         </div>
         {
             show && 
-            <div className='absolute  right-0 text-xs text-slate-400'>
+            <div className='absolute right-2 text-xs text-slate-400'>
             {t('changeLanguage')}
         </div>
 }
