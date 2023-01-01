@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { MdLanguage } from "react-icons/md";
 
 export const LanguageButton = () => {
     const { t, i18n } = useTranslation();
@@ -8,24 +9,26 @@ export const LanguageButton = () => {
     const changeLanguageToKo = () => i18n.changeLanguage("ko");
     const changeLanguageToEn = () => i18n.changeLanguage("en");
     return (
-        <div className="mt-2 mr-3">
+        <div
+            className="flex gap-2 place-items-center flex-grow-0"
+            onMouseEnter={() => setShow(true)}
+            onMouseLeave={() => setShow(false)}
+        >
             {show ? (
-                <div onMouseLeave={() => setShow(false)}>
+                <>
+                    <div className="text-xs text-slate-400">{t("changeLanguage")}</div>
                     {i18n.language === "en" ? (
-                        <button className="text-2xl" onClick={changeLanguageToKo}>
+                        <button className="text-lg" onClick={changeLanguageToKo}>
                             🇺🇸
                         </button>
                     ) : (
-                        <button className="text-2xl" onClick={changeLanguageToEn}>
+                        <button className="text-lg" onClick={changeLanguageToEn}>
                             🇰🇷
                         </button>
                     )}
-                    <div className="absolute right-2 text-xs text-slate-400">{t("changeLanguage")}</div>
-                </div>
+                </>
             ) : (
-                <div className="relative" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-                    <div className="text-2xl">💬</div>
-                </div>
+                <div className="text-lg">💬</div>
             )}
         </div>
     );

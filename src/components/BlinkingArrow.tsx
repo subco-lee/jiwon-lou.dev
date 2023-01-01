@@ -1,7 +1,19 @@
-import React, { FC } from 'react'
-import { FaAngleDoubleDown } from 'react-icons/fa'
+import React, { FC } from "react";
+import { useTranslation } from "react-i18next";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
-export const BlinkingArrow: FC = () => {
+type BlinkingArrowProps = {
+    onClick?: () => void;
+    textKey?: string;
+    color?: string;
+};
 
-  return <FaAngleDoubleDown className='animate-pingSmall' />
-}
+export const BlinkingArrow = ({ color, onClick, textKey }: BlinkingArrowProps) => {
+    const { t } = useTranslation();
+    return (
+        <div onClick={onClick} className="flex flex-col place-items-center text-center">
+            {textKey && <div className={`font-bold text-${color} text-md`}>{t(`${textKey}`)} </div>}
+            <FaAngleDoubleDown size={24} className={`text-${color} animate-bounce`} />
+        </div>
+    );
+};
