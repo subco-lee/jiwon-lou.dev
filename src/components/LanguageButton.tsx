@@ -18,17 +18,17 @@ export const LanguageButton = () => {
                 <>
                     <div className="text-xs text-slate-400">{t("changeLanguage")}</div>
                     {i18n.language === "en" ? (
-                        <button className="text-lg" onClick={changeLanguageToKo}>
+                        <button className="text-2xl" onClick={changeLanguageToKo}>
                             🇺🇸
                         </button>
                     ) : (
-                        <button className="text-lg" onClick={changeLanguageToEn}>
+                        <button className="text-2xl" onClick={changeLanguageToEn}>
                             🇰🇷
                         </button>
                     )}
                 </>
             ) : (
-                <div className="text-lg">💬</div>
+                <div className="text-2xl">💬</div>
             )}
         </div>
     );

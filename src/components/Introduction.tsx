@@ -11,7 +11,7 @@ export const Introduction = ({ moveToCareer }: IntroductionProps) => {
     const { t } = useTranslation();
 
     return (
-        <div className="bg-primary h-screen flex justify-center place-items-center">
+        <div className="bg-slate-700 h-screen flex justify-center place-items-center">
             <PivotIcons />
             <div className="bg-slate-50 flex flex-col h-5/6 w-10/12 p-4 justify-between rounded-md drop-shadow-md">
                 <div className="flex flex-col place-items-end">
@@ -27,7 +27,7 @@ export const Introduction = ({ moveToCareer }: IntroductionProps) => {
                         </div>
                     </div>
                 </div>
-                <BlinkingArrow onClick={moveToCareer} color="primary" />
+                <BlinkingArrow onClick={moveToCareer} color="slate-700" />
             </div>
         </div>
     );

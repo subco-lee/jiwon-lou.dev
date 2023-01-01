@@ -13,7 +13,7 @@ export const QuickCoffeeChatButton = () => {
             onClick={() => {}}
         >
             {show && <div className="text-xs text-slate-400">{t("coffeeChat")}</div>}
-            <FaCoffee className="fill-tertiary" size={20} />
+            <FaCoffee className="fill-tertiary" size={21} />
         </div>
     );
 };
